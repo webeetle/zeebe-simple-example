@@ -6,7 +6,7 @@ per questo esempio ho creato il seguente flusso
 
 ### Struttura Docker Compose
 
-Il docker compose si oppuca di avviare:
+Il docker compose si occupa di avviare:
 
 - un **broker** zeebe
 - un **monitor** per zeebe
@@ -39,7 +39,7 @@ ora l'ambiente è pronto
 ## Avviare una nuova instanza del work flow
 
 ### Caso 1
-tramite la seguente si avvia un'instanza che completa il flusso senza bloccarsi
+tramite la seguente chiamata si avvia un'instanza che completa il flusso senza bloccarsi
 
 ```bash
 curl --location --request POST 'http://localhost:3000/startInstance' \
@@ -53,7 +53,7 @@ curl --location --request POST 'http://localhost:3000/startInstance' \
 ![First Example](./img/firstexample.png)
 
 ### Caso 2
-caso in cui l'instanza si interrompe per mancaza del valore, eseguedo la seguente chiamata
+eseguedo la seguente chiamata generiamo un caso in cui l'instanza si interrompe per mancaza del valore
 
 ```bash
 curl --location --request POST 'http://localhost:3000/startInstance' \
@@ -79,8 +79,8 @@ curl --location --request PUT 'http://localhost:3000/update/2' \
 
 Il messaggio per essere inviato e gestito correttamente da ZeeBe ci sono dei parametri da tenere in conto, sono:
 
-- Message Name
-- Subscription Correlation Key (ovvero il valore che permette a ZeeBe di capire a quale instanza associare il valore del messaggio ricevuto)
+- **Message Name**
+- **Subscription Correlation Key** (ovvero il valore che permette a ZeeBe di capire a quale instanza associare il valore del messaggio ricevuto)
 
 ![Message Parameter](./img/messageParameter.png)
 
